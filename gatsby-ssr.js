@@ -3,7 +3,3 @@
  *
  * See: https://www.gatsbyjs.com/docs/ssr-apis/
  */
-
-exports.onRenderBody = ({ setHtmlAttributes }) => {
-  setHtmlAttributes({ lang: `en` })
-}

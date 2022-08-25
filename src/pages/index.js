@@ -3,127 +3,142 @@ import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 
 import Layout from "../components/layout"
-import Seo from "../components/seo"
-import * as styles from "../components/index.module.css"
+import MenuSite from "../images/menu-site.svg"
+// import Seo from "../components/seo"
 
-const links = [
-  {
-    text: "Tutorial",
-    url: "https://www.gatsbyjs.com/docs/tutorial",
-    description:
-      "A great place to get started if you're new to web development. Designed to guide you through setting up your first Gatsby site.",
-  },
-  {
-    text: "Examples",
-    url: "https://github.com/gatsbyjs/gatsby/tree/master/examples",
-    description:
-      "A collection of websites ranging from very basic to complex/complete that illustrate how to accomplish specific tasks within your Gatsby sites.",
-  },
-  {
-    text: "Plugin Library",
-    url: "https://www.gatsbyjs.com/plugins",
-    description:
-      "Learn how to add functionality and customize your Gatsby site or app with thousands of plugins built by our amazing developer community.",
-  },
-  {
-    text: "Build and Host",
-    url: "https://www.gatsbyjs.com/cloud",
-    description:
-      "Now you’re ready to show the world! Give your Gatsby site superpowers: Build and host on Gatsby Cloud. Get started for free!",
-  },
-]
-
-const samplePageLinks = [
-  {
-    text: "Page 2",
-    url: "page-2",
-    badge: false,
-    description:
-      "A simple example of linking to another page within a Gatsby site",
-  },
-  { text: "TypeScript", url: "using-typescript" },
-  { text: "Server Side Rendering", url: "using-ssr" },
-  { text: "Deferred Static Generation", url: "using-dsg" },
-]
-
-const moreLinks = [
-  { text: "Join us on Discord", url: "https://gatsby.dev/discord" },
-  {
-    text: "Documentation",
-    url: "https://gatsbyjs.com/docs/",
-  },
-  {
-    text: "Starters",
-    url: "https://gatsbyjs.com/starters/",
-  },
-  {
-    text: "Showcase",
-    url: "https://gatsbyjs.com/showcase/",
-  },
-  {
-    text: "Contributing",
-    url: "https://www.gatsbyjs.com/contributing/",
-  },
-  { text: "Issues", url: "https://github.com/gatsbyjs/gatsby/issues" },
-]
-
-const utmParameters = `?utm_source=starter&utm_medium=start-page&utm_campaign=default-starter`
-
-const IndexPage = () => (
-  <Layout>
-    <Seo title="Home" />
-    <div className={styles.textCenter}>
-      <StaticImage
-        src="../images/example.png"
-        loading="eager"
-        width={64}
-        quality={95}
-        formats={["auto", "webp", "avif"]}
-        alt=""
-        style={{ marginBottom: `var(--space-3)` }}
-      />
-      <h1>
-        Welcome to <b>Gatsby!</b>
-      </h1>
-      <p className={styles.intro}>
-        <b>Example pages:</b>{" "}
-        {samplePageLinks.map((link, i) => (
-          <React.Fragment key={link.url}>
-            <Link to={link.url}>{link.text}</Link>
-            {i !== samplePageLinks.length - 1 && <> · </>}
-          </React.Fragment>
-        ))}
-        <br />
-        Edit <code>src/pages/index.js</code> to update this page.
-      </p>
-    </div>
-    <ul className={styles.list}>
-      {links.map(link => (
-        <li key={link.url} className={styles.listItem}>
-          <a
-            className={styles.listItemLink}
-            href={`${link.url}${utmParameters}`}
-          >
-            {link.text} ↗
-          </a>
-          <p className={styles.listItemDescription}>{link.description}</p>
-        </li>
-      ))}
-    </ul>
-    {moreLinks.map((link, i) => (
-      <React.Fragment key={link.url}>
-        <a href={`${link.url}${utmParameters}`}>{link.text}</a>
-        {i !== moreLinks.length - 1 && <> · </>}
-      </React.Fragment>
-    ))}
-  </Layout>
-)
-
-/**
- * Head export to define metadata for the page
- *
- * See: https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-head/
- */
-export const Head = () => <Seo title="Home" />
+const IndexPage = () => {
+  return (
+    <Layout>
+      <main>
+        <section className="hero h-[calc(100vh-60px)] w-[100%] relative lg:h-[calc(100vh-78px)]">
+          <figure className="absolute top-0 left-0 right-0 bottom-0 flex justify-center">
+            {/* <img className="h-full w-full object-cover object-[45%] max-w-[1380px] mx-auto" src="./images/hero.jpg" alt="ヒーローイメージ(沖縄の海)" /> */}
+            <StaticImage
+              className="h-full w-full object-cover object-[45%] max-w-[1380px] mx-auto"
+              src="../images/hero.jpg"
+              alt="沖縄の海"
+              placeholder="blurred"
+              formats={["AUTO", "WEBP", "AVIF"]}
+            />
+            <div className="absolute top-0 left-0 right-0 bottom-0">
+              <div className="w-full h-full bg-[#B29797] mix-blend-multiply max-w-[1380px] mx-auto" />
+            </div>
+          </figure>
+          <div className="absolute top-0 left-0 right-0 bottom-0">
+            <div className="absolute top-1/2 left-1/2 -translate-x-[51%] -translate-y-[49%] w-[90%] h-[457px] border-2 border-white max-w-[540px]" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-[49%] -translate-y-[51%] w-[90%] h-[457px] border-2 border-gray-400 max-w-[540px]" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-[50%] -translate-y-[50%]">
+              <div className="text-white text-center">
+                <h2 className="pacifico text-[24px] inline-block lg:text-[38px]">
+                  Haku Web Design
+                  <span className="border border-b-[1px] border-white block w-[85%]" />
+                  <span className="border border-b-[1px] border-white block w-[85%] ml-[1rem] mt-1" />
+                </h2>
+                <ul className="text-[18px] whitespace-nowrap">
+                  <li className="mt-[1.5rem] text-[18px] lg:text-[22px]">
+                    <p>ウェブサイト制作・運営</p>
+                  </li>
+                  <li className="mt-[1rem] text-[18px] lg:text-[22px]">
+                    <p>DTP<br /><span className="text-[14px] text-[300]">(パンフレット・チラシ・名刺 etc)</span></p>
+                  </li>
+                  <li className="mt-[1rem] text-[18px] lg:text-[22px]">
+                    ウェブアプリ開発
+                  </li>
+                  <li className="mt-[1rem] text-[18px] lg:text-[22px]">
+                    システム構築
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section className="menus">
+          <div className="my-container md:grid md:grid-cols-2">
+            <div className="h-auto w-full border-2 my-[4rem] rounded-[5px] max-w-[380px] mx-auto">
+              <div className="h-[200px]">
+                <figure className="bg-[#f2f2f2]">
+                  <img className="max-h-[200px] w-full" src={MenuSite} alt="PC" />
+                  {/* <StaticImage
+                    class="max-h-[200px] w-full"
+                    src="../images/menu-site.svg"
+                    alt="pc"
+                  /> */}
+                </figure>
+              </div>
+              <div className="pl-[1rem] pr-[1rem]">
+                <h3 className="mt-[1rem] mb-[1rem] text-[18px]">ウェブサイト制作・運営</h3>
+                <p>お客様のご希望に答えるウェブサイト、運営方法をご提案・構築致します。</p>
+                <button className="bg-black text-white rounded-[5px] my-[1rem]">
+                  <Link to="/site/" className="pacifico px-[2rem] py-[.4rem] inline-block">Read more</Link>
+                </button>
+              </div>
+            </div>
+            <div className="h-auto w-full border-2 my-[4rem] rounded-[5px] max-w-[380px] mx-auto overflow-hidden">
+              <div className="h-[200px]">
+                <figure className="bg-[#f2f2f2]">
+                  {/* <img className="max-h-[200px] w-full" src="./images/menu-dtp.jpg" alt="books" /> */}
+                  <StaticImage
+                    class="max-h-[200px] w-full"
+                    src="../images/menu-dtp.jpg"
+                    alt="pc"
+                    placeholder="blurred"
+                    formats={["AUTO", "WEBP", "AVIF"]}
+                  />
+                </figure>
+              </div>
+              <div className="pl-[1rem] pr-[1rem]">
+                <h3 className="mt-[1rem] mb-[1rem] text-[18px]">DTP<span>(パンフレット・チラシ・名刺 etc)</span></h3>
+                <p>パンフレット・チラシ・名刺・Tシャツなどの作成・相談を承っております。</p>
+                <button className="bg-black text-white rounded-[5px] my-[1rem]">
+                  <Link to="/dtp/" className="pacifico px-[2rem] py-[.4rem] inline-block">Read more</Link>
+                </button>
+              </div>
+            </div>
+            <div className="h-auto w-full border-2 my-[4rem] rounded-[5px] max-w-[380px] mx-auto overflow-hidden">
+              <div className="h-[200px]">
+                <figure className="bg-[#f2f2f2]">
+                  {/* <img className="max-h-[200px] w-full" src="./images/menu-app.jpg" alt="PC" /> */}
+                  <StaticImage
+                    class="max-h-[200px] w-full"
+                    src="../images/menu-app.jpg"
+                    alt="pc"
+                    placeholder="blurred"
+                    formats={["AUTO", "WEBP", "AVIF"]}
+                  />
+                </figure>
+              </div>
+              <div className="pl-[1rem] pr-[1rem]">
+                <h3 className="mt-[1rem] mb-[1rem] text-[18px]">ウェブアプリ開発</h3>
+                <p>パソコンやスマートフォンからご利用できる、ウェブアプリケーションの開発を行います。</p>
+                <button className="bg-black text-white rounded-[5px] my-[1rem]">
+                  <Link to="/app/" className="pacifico px-[2rem] py-[.4rem] inline-block">Read more</Link>
+                </button>
+              </div>
+            </div>
+            <div className="h-auto w-full border-2 my-[4rem] rounded-[5px] max-w-[380px] mx-auto overflow-hidden">
+              <div className="h-[200px]">
+                <figure className="bg-[#f2f2f2]">
+                  {/* <img className="max-h-[200px] w-full" src="./images/menu-system.png" alt="config" /> */}
+                  <StaticImage
+                    class="max-h-[200px] w-full"
+                    src="../images/menu-system.png"
+                    alt="pc"
+                  />
+                </figure>
+              </div>
+              <div className="pl-[1rem] pr-[1rem]">
+                <h3 className="mt-[1rem] mb-[1rem] text-[18px]">システム構築</h3>
+                <p>お客様のご希望のシステム構築・運用を致します。</p>
+                <button className="bg-black text-white rounded-[5px] my-[1rem]">
+                  <Link to="/system/" className="pacifico px-[2rem] py-[.4rem] inline-block" href>Read more</Link>
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </Layout>
+  )
+}
 
 export default IndexPage

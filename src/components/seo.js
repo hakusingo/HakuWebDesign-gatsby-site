@@ -6,7 +6,6 @@
  */
 
 import * as React from "react"
-import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
 function Seo({ description, title, children }) {
@@ -44,12 +43,7 @@ function Seo({ description, title, children }) {
 }
 
 Seo.defaultProps = {
-  description: ``,
-}
-
-Seo.propTypes = {
-  description: PropTypes.string,
-  title: PropTypes.string.isRequired,
+  description: `HakuWebデザインは沖縄県うるま市にて活動するデザインやアプリケーションを作成する事務所です。ウェブサイト制作、ウェブアプリケーション作成、ポスター・パンフレット・名刺などのDTP印刷、システム構築などを承っています。`,
 }
 
 export default Seo
