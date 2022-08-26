@@ -4,11 +4,14 @@ import { StaticImage } from "gatsby-plugin-image"
 
 import Layout from "../components/layout"
 import MenuSite from "../images/menu-site.svg"
-// import Seo from "../components/seo"
+import Seo from "../components/seo"
 
 const IndexPage = () => {
   return (
     <Layout>
+      <Seo 
+        title="Home"
+      />
       <main>
         <section className="hero h-[calc(100vh-60px)] w-[100%] relative lg:h-[calc(100vh-78px)]">
           <figure className="absolute top-0 left-0 right-0 bottom-0 flex justify-center">
@@ -57,7 +60,7 @@ const IndexPage = () => {
             <div className="h-auto w-full border-2 my-[4rem] rounded-[5px] max-w-[380px] mx-auto">
               <div className="h-[200px]">
                 <figure className="bg-[#f2f2f2]">
-                  <img className="max-h-[200px] w-full" src={MenuSite} alt="PC" />
+                  <img className="h-auto max-h-[200px] w-full" src={MenuSite} alt="PC" />
                   {/* <StaticImage
                     class="max-h-[200px] w-full"
                     src="../images/menu-site.svg"
@@ -78,7 +81,7 @@ const IndexPage = () => {
                 <figure className="bg-[#f2f2f2]">
                   {/* <img className="max-h-[200px] w-full" src="./images/menu-dtp.jpg" alt="books" /> */}
                   <StaticImage
-                    class="max-h-[200px] w-full"
+                    class="max-h-[200px] h-auto w-full"
                     src="../images/menu-dtp.jpg"
                     alt="pc"
                     placeholder="blurred"
@@ -99,7 +102,7 @@ const IndexPage = () => {
                 <figure className="bg-[#f2f2f2]">
                   {/* <img className="max-h-[200px] w-full" src="./images/menu-app.jpg" alt="PC" /> */}
                   <StaticImage
-                    class="max-h-[200px] w-full"
+                    class="max-h-[200px] h-auto w-full"
                     src="../images/menu-app.jpg"
                     alt="pc"
                     placeholder="blurred"
@@ -120,7 +123,7 @@ const IndexPage = () => {
                 <figure className="bg-[#f2f2f2]">
                   {/* <img className="max-h-[200px] w-full" src="./images/menu-system.png" alt="config" /> */}
                   <StaticImage
-                    class="max-h-[200px] w-full"
+                    class="max-h-[200px] h-auto w-full"
                     src="../images/menu-system.png"
                     alt="pc"
                   />

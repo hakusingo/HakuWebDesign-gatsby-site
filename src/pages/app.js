@@ -1,15 +1,19 @@
 import * as React from "react"
-import { Link } from "gatsby"
+// import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 
 import Layout from "../components/layout"
 import LaravelLogo from "../images/logo-laravel.svg"
 import ReactLogo from "../images/logo-react.svg"
-// import Seo from "../components/seo"
+import Seo from "../components/seo"
 
 const App = () => {
   return (
     <Layout>
+      <Seo
+        title="アプリケーション構築"
+        description="HakuWebDesignでは、お客様のご要望に答えてウェブアプリケーションを構築することができます。"
+      />
       <main>
         <section id="hero" className="hero h-[220px] sm:h-[300px] lg:h-[400px] w-[100%] relative">
           <figure className="w-full h-full">

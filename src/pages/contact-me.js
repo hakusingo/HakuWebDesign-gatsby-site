@@ -1,15 +1,22 @@
 import * as React from "react"
-import { Link } from "gatsby"
+// import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
+import { Helmet } from "react-helmet"
 
 import Layout from "../components/layout"
-import LaravelLogo from "../images/logo-laravel.svg"
-import ReactLogo from "../images/logo-react.svg"
-// import Seo from "../components/seo"
+import Seo from "../components/seo"
 
 const ContactMe = () => {
   return (
     <Layout>
+      <Seo
+        title="お問い合わせ"
+        description="HakuWebDesignのコンタクト・お問い合わせページです。メール・ライン・インスタグラムよりお問い合わせいただけます。"
+      />
+      <Helmet>
+        <script src="https://www.google.com/recaptcha/api.js?render=6Lf7UsoUAAAAACT2Z6gLyh7RTDfyYGxfZ-M4D0ph"></script>
+        <script src="https://www.flexyform.com/js/recaptcha.js"></script>
+      </Helmet>
       <main>
         <section id="hero" className="hero h-[220px] sm:h-[300px] lg:h-[400px] w-[100%] relative">
           <figure className="w-full h-full">
@@ -69,30 +76,48 @@ const ContactMe = () => {
                 E-mail
               </h3>
             </div>
-            <div id="form" className="px-[2rem]">
-              <form action="/api/send" onSubmit={onSubmit} method="POST">
+            <div className="px-[2rem]">
+              <form method="post" action="https://www.flexyform.com/f/8fe35a0789d7a711349fccec72bbf519ec7d7679" encType="multipart/form-data">
+                <input type="hidden" name="_recaptcha" id="_recaptcha" required/>
+                <div className="mt-[2rem]">
+                  <label htmlFor="formName" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">お名前</label>
+                  <input id="formName" placeholder="お客様のお名前" type="text" name="fullname" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required/>
+                </div>
+                <div className="mt-[2rem]">
+                  <label htmlFor="formEmail" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Email</label>
+                  <input id="formEmail" placeholder="your-email@mail" type="email" name="_reply_to" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required/>
+                </div>
+                <div className="mt-[2rem]">
+                  <label htmlFor="formTextarea" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">お問い合わせ内容</label>
+                  <textarea id="formTextarea" rows={3} placeholder="こちらにお問合内容をお願いします。" name="content" className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required></textarea>
+                </div>
+                <div className="flex justify-end mt-[1rem]">
+                  <button className="bg-black text-white inline-block px-[1.4rem] py-[.2rem] rounded-[5px]">送信</button>
+                </div>
+              </form>
+              {/* <form>
                 <div>
-                  <label htmlFor="formName">
+                  <label htmlFor="">
                     お名前
                   </label>
-                  <input id="formName" value={value['formName'] || ``} type="text" />
+                  <input id="" type="text" />
                 </div>
                 <div>
                   <label htmlFor="formmail">
                     メールドレス
                   </label>
-                  <input value={value['formEmail'] || ``}  id="formmail" type="email" />
+                  <input id="formmail" type="email" />
                 </div>
                 <div>
                   <label htmlFor="formTextarea">
                     お問い合わせ内容
                   </label>
-                  <textarea id="formTextarea" value={value['formTextarea'] || ``} name cols={30} rows={10} placeholder="こちらにお問い合わせ内容をお願いします。2~３日以内に折り返しご連絡致します。" defaultValue={""} />
+                  <textarea id="formTextarea" cols={30} rows={10} placeholder="こちらにお問い合わせ内容をお願いします。2~３日以内に折り返しご連絡致します。" defaultValue={""} />
                 </div>
                 <div className="flex justify-end">
                   <button className="bg-black text-white inline-block px-[1.2rem] py-[.2rem] rounded-[5px]">送信</button>
                 </div>
-              </form>
+              </form> */}
             </div>
             <div>
               <div className="flex justify-center mt-[3rem]">

@@ -3,25 +3,25 @@ import * as React from "react"
 import { StaticImage } from "gatsby-plugin-image"
 
 import Layout from "../components/layout"
-import AILogo from "../images/logo-ai.svg"
-import PSLogo from "../images/logo-ps.svg"
 import Seo from "../components/seo"
 
-const Dtp = () => {
+const Mailed = () => {
   return (
     <Layout>
-      <Seo 
-        title="DPT(パンフレット作成、名刺作成、チラシ作成)"
-        description="HakuWebDesignでは、お客様のご要望に答えてDTP(パンフレット・チラシ・名刺）を作成することができます。"
+      <Seo
+        title="お問い合わせありがとうございました。"
+        description="お問い合わせ完了のページ"
       />
       <main>
         <section id="hero" className="hero h-[220px] sm:h-[300px] lg:h-[400px] w-[100%] relative">
           <figure className="w-full h-full">
-            {/* <img className="h-full w-full object-cover mx-auto" src="./images/menu-dtp.jpg" alt="ヒーローイメージ(books))" /> */}
+            {/* <img className="h-full w-full object-cover mx-auto" src="./images/contact-hero.jpg" alt="ヒーローイメージ(テーブルの上のスマホ、メガネ))" /> */}
             <StaticImage
+              src="../images/contact-hero.jpg"
+              alt="テーブル上のスマホ"
               className="h-full w-full object-cover mx-auto"
-              src="../images/menu-dtp.jpg"
-              alt="dtp"
+              placeholder="blurred"
+              formats={["AUTO", "WEBP", "AVIF"]}
             />
             <div id="bd-filter" className="backdrop-blur-[3px] backdrop-brightness-150 bg-white/30 absolute top-0 left-0 bottom-0 right-0 z-10" />
           </figure>
@@ -36,8 +36,7 @@ const Dtp = () => {
                   <span className="border border-b-[1px] border-black block w-[85%] ml-[1rem] mt-1" />
                 </h2>
                 <h3 className="mt-[1rem]">
-                  DTP<br />
-                  <span className="whitespace-nowrap">(パンフレット・チラシ・名刺 etc)</span>
+                  お問い合わせ
                 </h3>
               </div>
             </div>
@@ -46,31 +45,18 @@ const Dtp = () => {
         <section id="explain-text" className="px-[2rem] my-[4rem] max-w-[850px] mx-auto">
           <p className="indent-4 mt-4">
             <span>
-              Hakuウェブデザインでは、お客様のご要望・ご予算に合わせたDTPを作成致します。
+              メールによるお問い合わせありがとうございました。
             </span>
           </p>
           <p className="indent-4 mt-4">
             <span>
-              デザインから、写真、ロゴ、イラストまで、お客様のお好みとトレンドや、お客様のニーズに合わせるよう、お手伝いさせていただきます。
+              ２〜３日中に折り返しご連絡差し上げます。今しばらくお待ち下さいませ。
             </span>
           </p>
-          <p className="indent-4 mt-4">
-            <span>
-              DTPと関連した、効果的なSNS、ウェブサイト等の告知などもぜひご相談くださいませ。
-            </span>
-          </p>
-        </section>
-        <section>
-          <div className="my-container">
-            <div className="flex justify-between max-w-[600px] mx-auto mb-[4rem]">
-              <img className="w-[45%]" src={AILogo} alt="イラストレータロゴ" />
-              <img className="w-[45%]" src={PSLogo} alt="フォトショップロゴ" />
-            </div>
-          </div>
         </section>
       </main>
     </Layout>
   )
 }
 
-export default Dtp
+export default Mailed

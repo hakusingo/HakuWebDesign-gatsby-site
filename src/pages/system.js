@@ -1,15 +1,19 @@
 import * as React from "react"
-import { Link } from "gatsby"
+// import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 
 import Layout from "../components/layout"
 import GSLogo from "../images/logo-gs.svg"
 import ExcelLogo from "../images/logo-excel.svg"
-// import Seo from "../components/seo"
+import Seo from "../components/seo"
 
 const System = () => {
   return (
     <Layout>
+      <Seo 
+        title="システム構築"
+        description="HakuWebDesignでは、お客様のご要望に答えてシステムを構築することができます。"
+      />
       <main>
         <section id="hero" className="hero h-[220px] sm:h-[300px] lg:h-[400px] w-[100%] relative">
           <figure className="w-full h-full">

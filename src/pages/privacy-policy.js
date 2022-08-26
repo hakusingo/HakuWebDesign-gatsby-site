@@ -3,11 +3,15 @@ import * as React from "react"
 import { StaticImage } from "gatsby-plugin-image"
 
 import Layout from "../components/layout"
-// import Seo from "../components/seo"
+import Seo from "../components/seo"
 
 const PrivacyPolicy = () => {
   return (
     <Layout>
+      <Seo 
+        title="プライバシーポリシー"
+        description="HakuWebDesignのプライバシーポリシーページです。"
+      />
       <main>
         <section id="hero" className="hero h-[220px] sm:h-[300px] lg:h-[400px] w-[100%] relative overflow-x-hidden">
           <figure className="w-full h-full">
