@@ -11,6 +11,7 @@ const IndexPage = () => {
     <Layout>
       <Seo 
         title="Home"
+        description="HakuWebデザインは沖縄県うるま市にて活動するデザインやアプリケーションを作成する事務所です。ウェブサイト制作、ウェブアプリケーション作成、ポスター・パンフレット・名刺などのDTP印刷、システム構築などを承っています。GatsbyJsで高速サイトを作成が得意です。"
       />
       <main>
         <section className="hero h-[calc(100vh-60px)] w-[100%] relative lg:h-[calc(100vh-78px)]">
@@ -22,6 +23,7 @@ const IndexPage = () => {
               alt="沖縄の海"
               placeholder="blurred"
               formats={["AUTO", "WEBP", "AVIF"]}
+              loading="eager"
             />
             <div className="absolute top-0 left-0 right-0 bottom-0">
               <div className="w-full h-full bg-[#B29797] mix-blend-multiply max-w-[1380px] mx-auto" />
@@ -60,7 +62,7 @@ const IndexPage = () => {
             <div className="h-auto w-full border-2 my-[4rem] rounded-[5px] max-w-[380px] mx-auto">
               <div className="h-[200px]">
                 <figure className="bg-[#f2f2f2]">
-                  <img className="h-auto max-h-[200px] w-full" src={MenuSite} alt="PC" />
+                  <img className="h-[200px] w-full" src={MenuSite} alt="PC" />
                   {/* <StaticImage
                     class="max-h-[200px] w-full"
                     src="../images/menu-site.svg"
@@ -72,7 +74,7 @@ const IndexPage = () => {
                 <h3 className="mt-[1rem] mb-[1rem] text-[18px]">ウェブサイト制作・運営</h3>
                 <p>お客様のご希望に答えるウェブサイト、運営方法をご提案・構築致します。</p>
                 <button className="bg-black text-white rounded-[5px] my-[1rem]">
-                  <Link to="/site/" className="pacifico px-[2rem] py-[.4rem] inline-block">Read more</Link>
+                  <Link to={`/site/`} className="pacifico px-[2rem] py-[.4rem] inline-block">About Site</Link>
                 </button>
               </div>
             </div>
@@ -81,7 +83,7 @@ const IndexPage = () => {
                 <figure className="bg-[#f2f2f2]">
                   {/* <img className="max-h-[200px] w-full" src="./images/menu-dtp.jpg" alt="books" /> */}
                   <StaticImage
-                    class="max-h-[200px] h-auto w-full"
+                    class="h-[200px] w-full"
                     src="../images/menu-dtp.jpg"
                     alt="pc"
                     placeholder="blurred"
@@ -93,7 +95,7 @@ const IndexPage = () => {
                 <h3 className="mt-[1rem] mb-[1rem] text-[18px]">DTP<span>(パンフレット・チラシ・名刺 etc)</span></h3>
                 <p>パンフレット・チラシ・名刺・Tシャツなどの作成・相談を承っております。</p>
                 <button className="bg-black text-white rounded-[5px] my-[1rem]">
-                  <Link to="/dtp/" className="pacifico px-[2rem] py-[.4rem] inline-block">Read more</Link>
+                  <Link to={`/dtp/`} className="pacifico px-[2rem] py-[.4rem] inline-block">About DTP</Link>
                 </button>
               </div>
             </div>
@@ -102,7 +104,7 @@ const IndexPage = () => {
                 <figure className="bg-[#f2f2f2]">
                   {/* <img className="max-h-[200px] w-full" src="./images/menu-app.jpg" alt="PC" /> */}
                   <StaticImage
-                    class="max-h-[200px] h-auto w-full"
+                    class="h-[200px] w-full"
                     src="../images/menu-app.jpg"
                     alt="pc"
                     placeholder="blurred"
@@ -114,7 +116,7 @@ const IndexPage = () => {
                 <h3 className="mt-[1rem] mb-[1rem] text-[18px]">ウェブアプリ開発</h3>
                 <p>パソコンやスマートフォンからご利用できる、ウェブアプリケーションの開発を行います。</p>
                 <button className="bg-black text-white rounded-[5px] my-[1rem]">
-                  <Link to="/app/" className="pacifico px-[2rem] py-[.4rem] inline-block">Read more</Link>
+                  <Link to={`/app/`} title="アプリケーション開発について" className="pacifico px-[2rem] py-[.4rem] inline-block">About App</Link>
                 </button>
               </div>
             </div>
@@ -123,7 +125,7 @@ const IndexPage = () => {
                 <figure className="bg-[#f2f2f2]">
                   {/* <img className="max-h-[200px] w-full" src="./images/menu-system.png" alt="config" /> */}
                   <StaticImage
-                    class="max-h-[200px] h-auto w-full"
+                    class="h-[200px] w-full"
                     src="../images/menu-system.png"
                     alt="pc"
                   />
@@ -133,7 +135,7 @@ const IndexPage = () => {
                 <h3 className="mt-[1rem] mb-[1rem] text-[18px]">システム構築</h3>
                 <p>お客様のご希望のシステム構築・運用を致します。</p>
                 <button className="bg-black text-white rounded-[5px] my-[1rem]">
-                  <Link to="/system/" className="pacifico px-[2rem] py-[.4rem] inline-block" href>Read more</Link>
+                  <Link to={`/system/`} className="pacifico px-[2rem] py-[.4rem] inline-block" href>About System</Link>
                 </button>
               </div>
             </div>

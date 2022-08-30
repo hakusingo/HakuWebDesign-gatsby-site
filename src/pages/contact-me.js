@@ -95,29 +95,6 @@ const ContactMe = () => {
                   <button className="bg-black text-white inline-block px-[1.4rem] py-[.2rem] rounded-[5px]">送信</button>
                 </div>
               </form>
-              {/* <form>
-                <div>
-                  <label htmlFor="">
-                    お名前
-                  </label>
-                  <input id="" type="text" />
-                </div>
-                <div>
-                  <label htmlFor="formmail">
-                    メールドレス
-                  </label>
-                  <input id="formmail" type="email" />
-                </div>
-                <div>
-                  <label htmlFor="formTextarea">
-                    お問い合わせ内容
-                  </label>
-                  <textarea id="formTextarea" cols={30} rows={10} placeholder="こちらにお問い合わせ内容をお願いします。2~３日以内に折り返しご連絡致します。" defaultValue={""} />
-                </div>
-                <div className="flex justify-end">
-                  <button className="bg-black text-white inline-block px-[1.2rem] py-[.2rem] rounded-[5px]">送信</button>
-                </div>
-              </form> */}
             </div>
             <div>
               <div className="flex justify-center mt-[3rem]">
@@ -129,7 +106,7 @@ const ContactMe = () => {
                 ID@kurikett
               </div>
               <button className="flex justify-center w-full">
-                <a href="https://line.me/ti/p/R799lrcnJF" className="mx-auto text-[18px] inline-block py-[.5rem] px-[2rem] border-4 border-black rounded-[5px]">
+                <a href="https://line.me/ti/p/R799lrcnJF" rel="noopener noreferrer" className="mx-auto text-[18px] inline-block py-[.5rem] px-[2rem] border-4 border-black rounded-[5px]">
                   ライン友達追加ボタン
                 </a>
               </button>
@@ -144,7 +121,7 @@ const ContactMe = () => {
                 @hakusingo
               </div>
               <button className="flex justify-center w-full">
-                <a href="https://www.instagram.com/hakusingo/" className="mx-auto text-[18px] inline-block py-[.5rem] px-[2rem] border-4 border-black rounded-[5px]">
+                <a href="https://www.instagram.com/hakusingo/" rel="noopener noreferrer" className="mx-auto text-[18px] inline-block py-[.5rem] px-[2rem] border-4 border-black rounded-[5px]">
                   インスタグラムへ
                 </a>
               </button>

@@ -1,82 +1,57 @@
 import * as React from "react"
-import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
+import { useLocation } from "@reach/router"
 
-function Seo({ description, lang, meta, title }) {
-  const { site } = useStaticQuery(
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            title
-            description
-            author
-          }
-        }
-      }
-    `
-  )
+const Seo = ({ title, description }) => {
+  const { pathname } = useLocation()
+  const { site } = useStaticQuery(query)
+  const {
+    defaultTitle,
+    defaultDescription,
+    defaultImage,
+    siteUrl,
+  } = site.siteMetadata
 
-  const metaDescription = description || site.siteMetadata.description
-  const defaultTitle = site.siteMetadata?.title
+  const seo = {
+    title: title || defaultTitle,
+    description: description || defaultDescription,
+    image: defaultImage,
+    url: `${siteUrl}${pathname}`,
+    canonical: `${siteUrl}${pathname}`
+  }
 
   return (
-    <Helmet
-      htmlAttributes={{
-        lang,
-      }}
-      title={title}
-      titleTemplate={defaultTitle ? `%s / ${defaultTitle}` : null}
-      meta={[
-        {
-          name: `description`,
-          content: metaDescription,
-        },
-        {
-          property: `og:title`,
-          content: title,
-        },
-        {
-          property: `og:description`,
-          content: metaDescription,
-        },
-        {
-          property: `og:type`,
-          content: `website`,
-        },
-        {
-          name: `twitter:card`,
-          content: `summary`,
-        },
-        {
-          name: `twitter:creator`,
-          content: site.siteMetadata?.author || ``,
-        },
-        {
-          name: `twitter:title`,
-          content: title,
-        },
-        {
-          name: `twitter:description`,
-          content: metaDescription,
-        },
-      ].concat(meta)}
-    />
+    <Helmet>
+      <html lang="ja" />
+      <meta name="viewport" content="initial-scale=1.0, width=device-width" /> 
+      <meta charSet="utf-8" />
+
+      <title>{title}</title>
+      <meta name="description" content={description} />
+      <meta name="image" content={defaultImage} />
+      <link rel="canonical" href={seo.canonical} />
+
+      {seo.title && <meta property="og:title" content={seo.title} />}
+      {seo.description && <meta property="og:description" content={seo.description} />}
+      {seo.url && <meta property="og:url" content={seo.url} />}
+      {seo.image && <meta property="og:image" content={seo.image} />}
+
+    </Helmet>
   )
-}
-
-Seo.defaultProps = {
-  lang: `ja`,
-  meta: [],
-  description: ``,
-}
-
-Seo.propTypes = {
-  description: PropTypes.string,
-  lang: PropTypes.string,
-  meta: PropTypes.arrayOf(PropTypes.object),
-  title: PropTypes.string.isRequired,
 }
 
 export default Seo
+
+const query = graphql`
+  query SEO {
+    site {
+      siteMetadata {
+        defaultTitle
+        defaultDescription
+        defaultImage
+        siteUrl
+      }
+    }
+  }
+`

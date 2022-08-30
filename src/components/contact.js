@@ -18,7 +18,7 @@ const Contact = () => {
               <figure className="w-[calc(100%-32px)] h-auto mx-auto relative md:-mt-[3rem]">
                 {/* <img className="relative z-20" src="images/contact-me.jpg" alt="beach" /> */}
                 <StaticImage
-                  src="../images/contact-me.jpg"
+                  src="../images/beach.jpg"
                   className="relative z-20"
                   alt="desktopPC"
                   placeholder="blurred"
@@ -83,7 +83,7 @@ const Contact = () => {
               </dd>
             </dl>
             <button className="bg-black text-white rounded-[5px] my-[1rem]">
-              <Link to="/contact-me/" className="pacifico px-[2rem] py-[.4rem] inline-block">Contact Me</Link>
+              <Link to={`/contact-me/`} className="pacifico px-[2rem] py-[.4rem] inline-block">Contact Me</Link>
             </button>
           </div>
           <div className="order-3 md:flex-1">
@@ -98,7 +98,7 @@ const Contact = () => {
             </p>
             <div className="flex justify-center">
               <button className="bg-black text-white rounded-[5px] my-[2rem]">
-                <Link to="/" className="pacifico px-[2rem] py-[.4rem] inline-block">ブログへ</Link>
+                <Link to={`/`} className="pacifico px-[2rem] py-[.4rem] inline-block">ブログへ</Link>
               </button>
             </div>
           </div>

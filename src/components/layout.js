@@ -6,7 +6,6 @@
  */
 
 import * as React from "react"
-import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
 import Footer from "./footer"
@@ -18,20 +17,11 @@ import "@fontsource/noto-sans-jp/500.css"
 import "@fontsource/pacifico"
 
 const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
 
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
-        <main>{children}</main>
+      <Header />
+        {children}
       <Contact/>
       <Footer/>
     </>
