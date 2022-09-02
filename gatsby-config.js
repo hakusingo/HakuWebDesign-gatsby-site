@@ -3,18 +3,18 @@ module.exports = {
     defaultTitle: `HakuWebデザイン`,
     defaultDescription: `HakuWebデザインは沖縄県うるま市にて活動するデザインやアプリケーションを作成する事務所です。ウェブサイト制作、ウェブアプリケーション作成、ポスター・パンフレット・名刺などのDTP印刷、システム構築などを承っています。`,
     defaultImage: "src/images/hakusingoImage.jpg",
-    siteUrl: `https://hakusingo.com/`,
+    siteUrl: `https://haku-design.net//`,
     lang: `ja`,
     author: `@hakusingo`,
     locale: `ja_JP`,
   },
   plugins: [
-    // {
-    //   resolve: `gatsby-source-wordpress`,
-    //   options: {
-    //     url: `https://example.hakusingo.com/graphql`,
-    //   },
-    // },
+    {
+      resolve: `gatsby-source-wordpress`,
+      options: {
+        url: `https://wp.haku-design.net/graphql`,
+      },
+    },
     `gatsby-plugin-sitemap`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sass`,
@@ -47,8 +47,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-robots-txt`,
       options: {
-        host: `https://hakusingo.com`,
-        sitemap: `https://hakusingo.com/sitemap.xml`,
+        host: `https://haku-design.net/`,
+        sitemap: `https://haku-design.net//sitemap.xml`,
         policy: [{ userAgent: `*`, allow: `/` }]
       },
     },

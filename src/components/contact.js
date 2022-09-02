@@ -50,7 +50,6 @@ const Contact = () => {
                 alt="hakusingo-pic"
                 placeholder="blurred"
                 formats={["AUTO", "WEBP", "AVIF"]}
-                quality={90}
               />
             </figure>
           </div>
@@ -91,14 +90,14 @@ const Contact = () => {
               沖縄県うるま市具志川生まれ、具志川育ち。バスケットボール、読書、散歩、音楽（何でも聞く）PCいじり、プログラミングが大好きの1983年生まれ。
             </p>
             <p className="px-[1rem] mt-[1rem] indent-4">
-              ２０代のころ東京（新小岩・吉祥寺)に10年ほど住む、飲食店スタッフ・バーテンダー、お寺で働いた後に地元のウェブ系の会社で働く。
+              ２０代のころ東京(新小岩・吉祥寺)に10年ほど住む、飲食店スタッフ・バーテンダー、お寺で働いた後に地元のウェブ系の会社で働く。
             </p>
             <p className="px-[1rem] mt-[1rem] indent-4">
               2022年より独立。ウェブサイト制作やアプリ開発・ウェブライティングなどITの知識を生かして、地元でお困りの方の手助けをするウェブ屋さん。
             </p>
             <div className="flex justify-center">
               <button className="bg-black text-white rounded-[5px] my-[2rem]">
-                <Link to={`/`} className="pacifico px-[2rem] py-[.4rem] inline-block">ブログへ</Link>
+                <Link to={`/blog-index/`} className="pacifico px-[2rem] py-[.4rem] inline-block">ブログへ</Link>
               </button>
             </div>
           </div>

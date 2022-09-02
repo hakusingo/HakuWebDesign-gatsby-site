@@ -24,32 +24,32 @@ const Header = () => {
           <div className="hidden xl:block">
             <ul className="flex">
               <li className="mr-[1rem]">
-                <Link to="/">
+                <Link to="/" activeClassName="border-b-2 border-white">
                 ホーム
                 </Link>
               </li>
               <li className="mr-[1rem]">
-                <Link to={`/site/`}>
+                <Link to={`/site/`} activeClassName="border-b-2 border-white">
                 ウェブサイト制作・運営
                 </Link>
               </li>
-              <li className="mr-[1rem] flex items-center">
-                <Link to={`/dtp/`}>
+              <li className="mr-[1rem]">
+                <Link to={`/dtp/`} activeClassName="border-b-2 border-white">
                 DTP
                 </Link>
               </li>
               <li className="mr-[1rem]">
-                <Link to={`/app/`}>
+                <Link to={`/app/`} activeClassName="border-b-2 border-white">
                 ウェブアプリ開発
                 </Link>
               </li>
               <li className="mr-[1rem]">
-                <Link to={`/system/`}>
+                <Link to={`/system/`} activeClassName="border-b-2 border-white">
                 システム構築
                 </Link>
               </li>
               <li>
-                <Link to={`/contact-me`}>
+                <Link to={`/contact-me`} activeClassName="border-b-2 border-white">
                 コンタクト
                 </Link>
               </li>
@@ -70,37 +70,37 @@ const Header = () => {
         <div className="text-black">
           <ul className="mt-[4rem] ml-[2rem] text-[22px] font-medium lg:ml-[4rem]">
             <li className="mb-[1.6rem]">
-              <Link to={`/`}>
+              <Link to={`/`} activeClassName="border-b-2 border-black">
               ホーム
               </Link>
             </li> 
             <li className="mb-[1.6rem]">
-              <Link to={`/site/`}>
+              <Link to={`/site/`} activeClassName="border-b-2 border-black">
               ウェブサイト制作・運営
               </Link>
             </li>
             <li className="mb-[1.6rem] flex items-center">
-              <Link to={`/dtp/`}>
+              <Link to={`/dtp/`} activeClassName="border-b-2 border-black">
               DTP<span className="text-[12px] block">(パンフレット・チラシ・名刺 etc)</span>
               </Link>
             </li>
             <li className="mb-[1.6rem]">
-              <Link to={`/app/`}>
+              <Link to={`/app/`} activeClassName="border-b-2 border-black">
               ウェブアプリ開発
               </Link>
             </li>
             <li className="mb-[1.6rem]">
-              <Link to={`/system/`}>
+              <Link to={`/system/`} activeClassName="border-b-2 border-black">
               システム構築
               </Link>
             </li>
             <li className="mb-[1.6rem]">
-              <Link to={`/contact-me/`}>
+              <Link to={`/contact-me/`} activeClassName="border-b-2 border-black">
               コンタクト
               </Link>
             </li>
             <li>
-              <Link to={`/privacy-policy`}>
+              <Link to={`/privacy-policy`} activeClassName="border-b-2 border-black">
               プライバシーポリシー
               </Link>
             </li>
