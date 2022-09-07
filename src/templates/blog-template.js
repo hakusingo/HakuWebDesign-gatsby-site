@@ -1,11 +1,19 @@
-import React from "react"
-import { graphql, Link } from "gatsby"
-import Layout from "../components/layout"
+import * as React from "react"
+import { Link } from "gatsby"
 import { GatsbyImage, StaticImage } from "gatsby-plugin-image"
+import { graphql } from "gatsby"
 
-const PostIndex = ({ data }) => {
+import Layout from "../components/layout"
+import Seo from "../components/seo"
+import "../styles/wp-post.scss"
+
+const App = ({ data, pageContext }) => {
   return (
     <Layout>
+      <Seo
+        title=""
+        description=""
+      />
       <main>
         <div className="my-container">
           <div className="max-w-[1000px] mx-auto mt-[4rem]">
@@ -17,7 +25,7 @@ const PostIndex = ({ data }) => {
           <div className="max-w-[1000px] mx-auto w-full flex-wrap sm:flex sm:justify-around sm:w-[90%]">
             {data.allWpPost.edges.map(({ node }, index ) => (
               <div className="p-[1rem] my-[2rem] bg-black text-white rounded-[5px] sm:w-[45%]" key={index}>
-                <Link to={`/${node.slug}/`}>
+                <Link to={`/blog/${node.slug}/`}>
                   <figure>
                     {node.featuredImage ? (
                       <GatsbyImage
@@ -43,34 +51,59 @@ const PostIndex = ({ data }) => {
               </div>
             ))}
           </div>
+          <ul id="page-link" className="flex justify-between max-w-[1000px] mx-auto">
+            {!pageContext.isFirst && (
+              <li>
+                <Link
+                  to={
+                    pageContext.currentPage === 2
+                      ? `/blog/`
+                      : `/blog/${pageContext.currentPage - 1}/`
+                  }
+                  rel="prev"
+                >
+                &lt; 前のページ
+                </Link>
+              </li>
+            )}
+            {!pageContext.isLast && (
+              <li className="ml-auto">
+                <Link to={`/blog/${pageContext.currentPage + 1}/`} rel="next">
+                  次のページ &gt;
+                </Link>
+              </li>
+            )}
+          </ul>
         </div>
       </main>
     </Layout>
   )
 }
-export default PostIndex
+
+export default App
 
 export const query = graphql`
-  query {
-    allWpPost(sort: { fields: date, order: DESC }) {
-      edges {
-        node {
-          id
-          title
-          date(formatString: "YYYY年mm月dd日")
-          slug
-          featuredImage {
-            node {
-              localFile {
-                childImageSharp {
-                  gatsbyImageData(
-                    placeholder: BLURRED
-                    layout: CONSTRAINED
-                    transformOptions: { cropFocus: CENTER }
-                    width: 500
-                    height: 280
-                  )
-                }
+query($skip: Int!, $limit: Int!) {
+  allWpPost(
+    sort: {order: DESC, fields: date}
+    skip: $skip
+    limit: $limit
+  ) {
+    edges {
+      node {
+        title
+        id
+        slug
+        featuredImage {
+          node {
+            localFile {
+              childImageSharp {
+                gatsbyImageData(
+                  quality: 100
+                  placeholder: BLURRED
+                  layout: CONSTRAINED
+                  transformOptions: { cropFocus: CENTER }
+                )
               }
             }
           }
@@ -78,4 +111,5 @@ export const query = graphql`
       }
     }
   }
+}
 `

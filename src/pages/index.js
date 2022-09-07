@@ -57,9 +57,9 @@ const IndexPage = () => {
             </div>
           </div>
         </section>
-        <section className="menus">
+        <section className="menus my-[3rem]">
           <div className="my-container md:grid md:grid-cols-2">
-            <div className="h-auto w-full border-2 my-[4rem] rounded-[5px] max-w-[380px] mx-auto">
+            <div className="h-auto w-full border-2 rounded-[5px] max-w-[380px] mx-auto my-[2rem]">
               <div className="h-[200px]">
                 <figure className="bg-[#f2f2f2]">
                   <img className="h-[200px] w-full" src={MenuSite} alt="PC" />
@@ -78,7 +78,7 @@ const IndexPage = () => {
                 </button>
               </div>
             </div>
-            <div className="h-auto w-full border-2 my-[4rem] rounded-[5px] max-w-[380px] mx-auto overflow-hidden">
+            <div className="h-auto w-full border-2 rounded-[5px] max-w-[380px] mx-auto overflow-hidden my-[2rem]">
               <div className="h-[200px]">
                 <figure className="bg-[#f2f2f2]">
                   {/* <img className="max-h-[200px] w-full" src="./images/menu-dtp.jpg" alt="books" /> */}
@@ -99,7 +99,7 @@ const IndexPage = () => {
                 </button>
               </div>
             </div>
-            <div className="h-auto w-full border-2 my-[4rem] rounded-[5px] max-w-[380px] mx-auto overflow-hidden">
+            <div className="h-auto w-full border-2 rounded-[5px] max-w-[380px] mx-auto overflow-hidden my-[2rem]">
               <div className="h-[200px]">
                 <figure className="bg-[#f2f2f2]">
                   {/* <img className="max-h-[200px] w-full" src="./images/menu-app.jpg" alt="PC" /> */}
@@ -120,7 +120,7 @@ const IndexPage = () => {
                 </button>
               </div>
             </div>
-            <div className="h-auto w-full border-2 my-[4rem] rounded-[5px] max-w-[380px] mx-auto overflow-hidden">
+            <div className="h-auto w-full border-2 rounded-[5px] max-w-[380px] mx-auto overflow-hidden my-[2rem]">
               <div className="h-[200px]">
                 <figure className="bg-[#f2f2f2]">
                   {/* <img className="max-h-[200px] w-full" src="./images/menu-system.png" alt="config" /> */}

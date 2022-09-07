@@ -97,7 +97,7 @@ const Contact = () => {
             </p>
             <div className="flex justify-center">
               <button className="bg-black text-white rounded-[5px] my-[2rem]">
-                <Link to={`/blog-index/`} className="pacifico px-[2rem] py-[.4rem] inline-block">ブログへ</Link>
+                <Link to={`/blog/`} className="pacifico px-[2rem] py-[.4rem] inline-block">ブログへ</Link>
               </button>
             </div>
           </div>
